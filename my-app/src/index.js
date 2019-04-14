@@ -21,11 +21,8 @@ class Board extends React.Component {
 
   handleClick(i) {
     const squares = this.state.squares.slice();
-    let tie = " ";
     if (calculateWinner(squares)) {
       return;
-    } else if (squares[i]) {
-      tie = "It's a tie!";
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
     this.setState({
@@ -55,7 +52,6 @@ class Board extends React.Component {
     return (
       <div>
         <div className="status">{status}</div>
-        <div className="tie">{tie}</div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -113,5 +109,11 @@ function calculateWinner(squares) {
       return squares[a];
     }
   }
-  return null;
+  for (let j = 0; j < 9; j++) {
+    if (squares[j] == null) {
+      return null;
+    }
+  }
+
+  return "tie";
 }
