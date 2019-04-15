@@ -1,3 +1,8 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "appService.zipIgnorePattern": [
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/a72b8c87-37eb-4f7b-9e08-e03ac1dbf9a7/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/mgFirstWebApp",
+  "appService.deploySubpath": ""
 }
